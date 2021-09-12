@@ -7,11 +7,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: Rockwell;
-
+    overflow-y: scroll;
 }
 #app {
     width: inherit;
     height: inherit;
+    overflow-y: scroll;
 }
 header {
     display: inline-flex;

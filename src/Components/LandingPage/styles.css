@@ -1,7 +1,6 @@
-header {
-   background-image: url('./header.svg');
-   position: relative;
-   display: inline;
+#landing-page-header {
+   position: static;
+   display: inline-flex;
    color: white;
 }
 #header-img {
@@ -13,6 +12,10 @@ header {
     left: 2%;
     margin-top: 7%
 }
+#gyde-container {
+    display:inline-flex;
+
+}
 #float-text-right {
     text-align: right;
     margin-right: 5%;
@@ -20,9 +23,21 @@ header {
     font-size: 3rem;
     font-weight: 600;
 }
-header strong {
+#landing-page-header strong {
     position: absolute;
     left: 25%;
     bottom: 23%;
     font-size:2rem;
+}
+
+
+#landing-page-info {
+    display:grid;
+    text-align: justify-all;
+}
+#landing-page-info section > div {
+    display: inline-grid;
+}
+#landing-page-info section > div > strong {
+    text-align:center;
 }
