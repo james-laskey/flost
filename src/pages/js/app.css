@@ -1,0 +1,26 @@
+body {
+    position: fixed;
+    width: calc(100%);
+    height: calc(100%);
+    display: inline-grid;
+    background-image: linear-gradient(#FCFBFE 20%,#fff 100%);
+    margin: 0;
+    padding: 0;
+    font-family: Rockwell;
+
+}
+#app {
+    width: inherit;
+    height: inherit;
+}
+header {
+    display: inline-flex;
+}
+button {
+
+}
+input [type='text'] {
+    border-radius: 10px;
+    box-shadow: 4px 4px 4xp grey;
+    background-color: #FCFBFE
+}

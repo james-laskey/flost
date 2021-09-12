@@ -1,0 +1,26 @@
+#flostbar-container {
+    display: inline-flex;
+    width: inherit;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    height: 40px;
+    align-items: center;
+    margin:0px 2px 0px 2px;
+}
+#flostbar-wrapper {
+    background-color: #0A1C88;
+    width:100%;
+}
+#selector {
+    width: 27%;
+}
+#flostbar-container p {
+}
+.selector-style {
+    align-items: center;
+    display: inline-flex;
+}
+.selector-style input {
+    margin-right: 2%;
+}

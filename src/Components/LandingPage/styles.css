@@ -1,0 +1,28 @@
+header {
+   background-image: url('./header.svg');
+   position: relative;
+   display: inline;
+   color: white;
+}
+#header-img {
+    position: static;
+    z-index:-99;
+}
+#gyde {
+    position:absolute;
+    left: 2%;
+    margin-top: 7%
+}
+#float-text-right {
+    text-align: right;
+    margin-right: 5%;
+    margin-top: -5%;
+    font-size: 3rem;
+    font-weight: 600;
+}
+header strong {
+    position: absolute;
+    left: 25%;
+    bottom: 23%;
+    font-size:2rem;
+}
