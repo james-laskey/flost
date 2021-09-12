@@ -16,7 +16,6 @@ function LandingPage(props){
                 <div>
                     <strong>solve. <br/>explore.</strong>
                 </div>
-
             </div>
             <p id="float-text-right">get flost.</p>
         </header>
