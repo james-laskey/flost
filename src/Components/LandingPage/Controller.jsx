@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import FlostBar from '../FlostBar/Controller.jsx'
 import gyde from './gyde.svg'
-import headerimg from './header.svg'
 import './styles.css'
 
 function LandingPage(props){
@@ -10,7 +9,6 @@ function LandingPage(props){
     <div>
         <FlostBar buttons={true}/>
         <header id='landing-page-header'>
-            <img id='header-img' src={headerimg}/>
             <div id='gyde-container'>
                 <img src={gyde}/>
                 <div>

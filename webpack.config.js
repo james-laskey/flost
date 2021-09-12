@@ -23,7 +23,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "src", "pages","js"),
         filename: "[name].js",
-        publicPath: '/'
+        publicPath: './'
     },
     module: {
         rules: [
@@ -34,6 +34,15 @@ module.exports = {
               loader: "babel-loader",
             }
           },
+          {
+          test: /\.svg$/,
+          use: [
+            {
+              loader: 'svg-url-loader',
+
+            },
+          ],
+        },
           {
             test: /\.css$/,
             exclude: /node_modules/,
@@ -51,7 +60,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jp(e*)g|svg|gif)$/,
+        test: /\.(png|jp(e*)g|gif)$/,
         use: [
           {
             loader: 'file-loader',
