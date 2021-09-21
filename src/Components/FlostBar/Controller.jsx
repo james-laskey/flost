@@ -19,7 +19,7 @@ function FlostBar(props){
                         <input type='text' placeholder='Username' onInput={e=>{setUsername(e.target.value)}} />
                         <input type='password' onInput={e=>{setPassword(e.target.value)}}/>
                         <button onClick={e=>{toggleVerify(!verify)}}> login </button>
-                        <a href='/signup'> signup </a>
+                        <a href='/signin-signup'> signup </a>
                     </div>
                 )
             }
@@ -78,6 +78,15 @@ function FlostBar(props){
 //                 method: 'POST',
 //
 //             })
+            try{
+                if(username=="" || password==""){
+                    throw Error
+                }
+                //request login credentials
+            } catch(err){
+                toggleVerify(false)
+                window.location.href = '/signin-signup'
+            }
         }
     },[verify])
     return(

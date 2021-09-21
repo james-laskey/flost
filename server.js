@@ -30,5 +30,6 @@ function checkDB(){
 }
 
 app.get('/', (req, res) => res.sendFile(__dirname+"/src/pages/landing-page.html"));
+app.get('/signin-signup', (req,res)=>res.sendFile(__dirname+"/src/pages/signin-signup.html"));
 //ASSETS
 app.get('/gyde',(req,res)=>res.sendFile(__dirname+"/src/pages/js/assets/80ac5f1fd3bf79c6596ab5cf09b575bd-gyde.svg"))

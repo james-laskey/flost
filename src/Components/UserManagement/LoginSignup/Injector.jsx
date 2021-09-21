@@ -1,4 +1,4 @@
-import Controller from "./Controller.jsx"
+import LoginSignup from "./Controller.jsx"
 import React from "react";
 import ReactDOM from "react-dom";
-ReactDOM.render(<Controller/>, document.getElementById("app"))
+ReactDOM.render(<LoginSignup/>, document.getElementById("app"))
