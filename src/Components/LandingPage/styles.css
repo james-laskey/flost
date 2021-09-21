@@ -14,10 +14,13 @@
     margin-left: auto;
     margin-right: auto;
 }
-#landing-page-info section > div > strong {
+#landing-page-info section > div > h2 {
     text-align:center;
     color: #0A1C88;
     font-size:1.5rem;
+}
+#landing-page-info {
+
 }
 #landing-page-info section > div > p {
 
@@ -39,7 +42,8 @@
        color: white;
        align-items: center;
        width:inherit;
-       background-image: url('https://trashymedia.s3.us-east-2.amazonaws.com/assets/header.svg');
+       height: 99vh;
+       background-image: linear-gradient(#465EFB 10%, #C2FFD8 100%);
     }
     #float-text-right {
         text-align: right;
@@ -67,6 +71,7 @@
        color: white;
        align-items: center;
        width:inherit;
+       height: 99vh;
        background-image: linear-gradient(#465EFB 10%, #C2FFD8 100%);
     }
     #gyde-container div {

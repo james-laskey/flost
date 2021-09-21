@@ -22,8 +22,8 @@ a {
     color: white;
     font-size: 1rem;
     text-decoration: none;
-    padding: 1%;
-    border-radius: 1rem;
+    padding: 0.5%;
+    border-radius: 0.5rem;
 }
 button {
     background-color: #7649FE;
@@ -32,8 +32,8 @@ button {
     color: #7649FE;
     font-size: 1rem;
     color: white;
-    padding: 1%;
-    border-radius: 1rem;
+    padding: 0.5%;
+    border-radius: 0.5rem;
 }
 h1 {
     color: #7649FE;
@@ -45,17 +45,18 @@ header {
     display: inline-flex;
 }
 
-input [type="password"] {
-    border-radius: 1rem;
-    box-shadow: 4px 4px 4xp grey;
+ input[type="password"]{
+    border-radius: 0.5rem;
     background-color: #FCFBFE;
     border: none;
     font-family: inherit;
+    padding: 1%;
 }
-input [type="text"] {
-    border-radius: 1rem;
-    box-shadow: 4px 4px 4xp grey;
-    background-color: #FCFBFE
+input[type="text"] {
+    border-radius: 0.5rem;
+    background-color: #FCFBFE;
     border: none;
     font-family: Rockwell;
+    margin-right: 1%;
+    padding: 1%;
 }

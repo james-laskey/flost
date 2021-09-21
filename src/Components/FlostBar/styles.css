@@ -14,17 +14,17 @@
     padding: 0px 1px 0px 1px;
 }
 #selector {
-    width: 30%;
+    width: 33%;
 }
 #flostbar-container p {
 }
 .selector-style {
     align-items: center;
     display: inline-flex;
+    justify-content: space-around;
+    width: 99%;
 }
-.selector-style input {
-    margin-right: 2%;
-}
+
 
 @media screen and (min-width: 481px) {
 

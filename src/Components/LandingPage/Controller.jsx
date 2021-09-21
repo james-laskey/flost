@@ -21,12 +21,10 @@ function LandingPage(props){
             <p id="float-text-right">get flost.</p>
         </header>
         <section id='landing-page-info'>
-            <section>
-                <h1>redirecting the flow of information</h1>
-            </section>
+            <h1>redirecting the flow of information</h1>
             <section>
                 <div>
-                    <strong>flost</strong>
+                    <h2>flost</h2>
                     <img src={flostsvg}/>
                      <ul>
                          <li><p>there is a root and path to every problem</p></li>
@@ -35,7 +33,7 @@ function LandingPage(props){
                      </ul>
                 </div>
                 <div>
-                    <strong>flash</strong>
+                    <h2>flash</h2>
                     <img src={flash}/>
                      <ul>
                          <li><p>lets aggregate as many terms and explanations we can</p></li>
@@ -44,7 +42,7 @@ function LandingPage(props){
                      </ul>
                 </div>
                 <div>
-                    <strong>final</strong>
+                    <h2>final</h2>
                     <img src={final}/>
                      <ul>
                          <li><p>we are in control of our statistics and learning</p></li>
