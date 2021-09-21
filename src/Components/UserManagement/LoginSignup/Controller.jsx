@@ -52,9 +52,9 @@ function LoginSignup(props){
 
     const fbResponse = (response) => {
       console.log(response)
-      const credentials
-      setFacebookLoginCredentials(JSON.stringify(response, undefined, 2))
-      setFacebookAppSecret(_getFacebookAppSecret()
+      const credentials = JSON.stringify(response, undefined, 2)
+      setFacebookLoginCredentials(credentials)
+      setAppCredentials(_getAppCredentials(1))
       toggleVerify(true)
     }
     //Controls the Login UI Component
