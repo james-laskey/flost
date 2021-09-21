@@ -1,47 +1,75 @@
-#landing-page-header {
-   position: static;
-   display: inline-flex;
-   justify-content: space-between;
-   color: white;
-   align-items: center;
-   width:inherit;
-   background-image: url('https://trashymedia.s3.us-east-2.amazonaws.com/assets/header.svg');
-}
-#header-img {
-    position: absolute;
-    z-index:-99;
-}
-#gyde {
-    position:absolute;
-    left: 2%;
-    margin-top: 7%
-}
-#gyde-container {
-    position: static;
-    display: inline-flex;
-    tex-align:left;
-    align-items: end;
-
-}
-#float-text-right {
-    text-align: right;
-    margin-right: 5%;
-    margin-top: -5%;
-    font-size: 3rem;
-    font-weight: 600;
-}
 #landing-page-header strong {
     font-size:2rem;
+    color: #0A1C88;
 }
-
-
 #landing-page-info {
     display:grid;
-    text-align: justify-all;
+    text-align: center;
 }
 #landing-page-info section > div {
     display: inline-grid;
+    text-align: left;
+}
+#landing-page-info section > div > img {
+    margin-left: auto;
+    margin-right: auto;
 }
 #landing-page-info section > div > strong {
     text-align:center;
+    color: #0A1C88;
+    font-size:1.5rem;
+}
+#landing-page-info section > div > p {
+
+}
+#gyde-container > div > strong {
+    color: white;
+}
+@media screen and (min-width: 481px) {
+    #gyde-container {
+        position: static;
+        display: inline-flex;
+        tex-align:left;
+        align-items: end;
+    }
+    #landing-page-header {
+       position: static;
+       display: inline-flex;
+       justify-content: space-between;
+       color: white;
+       align-items: center;
+       width:inherit;
+       background-image: url('https://trashymedia.s3.us-east-2.amazonaws.com/assets/header.svg');
+    }
+    #float-text-right {
+        text-align: right;
+        margin-right: 5%;
+        margin-top: -5%;
+        font-size: 3rem;
+        font-weight: 600;
+    }
+}
+@media screen and (max-width: 480px) {
+    #landing-page-info section {
+        display: grid;
+        margin-top: 3%;
+    }
+    #gyde-container {
+        position: static;
+        display: grid;
+        tex-align:center;
+        align-items:baseline;
+    }
+    #landing-page-header {
+       position: static;
+       display: grid;
+       justify-content: center;
+       color: white;
+       align-items: center;
+       width:inherit;
+       background-image: linear-gradient(#465EFB 10%, #C2FFD8 100%);
+    }
+    #gyde-container div {
+        text-align:center;
+    }
 }

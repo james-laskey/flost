@@ -3,7 +3,6 @@ body {
     width: calc(100%);
     height: calc(100%);
     display: inline-grid;
-    background-image: linear-gradient(#FCFBFE 20%,#fff 100%);
     margin: 0;
     padding: 0;
     font-family: Rockwell;
@@ -13,6 +12,31 @@ body {
     width: inherit;
     height: inherit;
     overflow-y: scroll;
+    background-color: #FCFBFE;
+}
+a {
+    background-color: #7649FE;
+    border: #FCFBFE 2px solid;
+    font-family: inherit;
+    color: #7649FE;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 1%;
+    border-radius: 1rem;
+}
+button {
+    background-color: #7649FE;
+    border: #FCFBFE 2px solid;
+    font-family: inherit;
+    color: #7649FE;
+    font-size: 1rem;
+    color: white;
+    padding: 1%;
+    border-radius: 1rem;
+}
+h1 {
+    color: #7649FE;
 }
 #app > div {
     width: inherit;
@@ -20,11 +44,18 @@ body {
 header {
     display: inline-flex;
 }
-button {
 
+input [type="password"] {
+    border-radius: 1rem;
+    box-shadow: 4px 4px 4xp grey;
+    background-color: #FCFBFE;
+    border: none;
+    font-family: inherit;
 }
-input [type='text'] {
-    border-radius: 10px;
+input [type="text"] {
+    border-radius: 1rem;
     box-shadow: 4px 4px 4xp grey;
     background-color: #FCFBFE
+    border: none;
+    font-family: Rockwell;
 }

@@ -19,6 +19,7 @@ function FlostBar(props){
                         <input type='text' placeholder='Username' onInput={e=>{setUsername(e.target.value)}} />
                         <input type='password' onInput={e=>{setPassword(e.target.value)}}/>
                         <button onClick={e=>{toggleVerify(!verify)}}> login </button>
+                        <a href='/signup'> signup </a>
                     </div>
                 )
             }
@@ -72,7 +73,7 @@ function FlostBar(props){
     },[userAviMenuToggle,user])
     React.useEffect(()=>{
         if(verify){
-            //request server verification
+            //request server verification and send to login page upon failure
 //             fetch('/login',{
 //                 method: 'POST',
 //
@@ -82,7 +83,7 @@ function FlostBar(props){
     return(
     <div id='flostbar-wrapper'>
       <div id='flostbar-container'>
-        <p>flost</p>
+        <strong>flost</strong>
         <SearchBar/>
         <section id='selector'>
         </section>

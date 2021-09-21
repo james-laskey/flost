@@ -10,10 +10,11 @@
 }
 #flostbar-wrapper {
     background-color: #0A1C88;
-    width:100%;
+    width: 100%;
+    padding: 0px 1px 0px 1px;
 }
 #selector {
-    width: 27%;
+    width: 30%;
 }
 #flostbar-container p {
 }
@@ -23,4 +24,18 @@
 }
 .selector-style input {
     margin-right: 2%;
+}
+
+@media screen and (min-width: 481px) {
+
+}
+@media screen and (max-width: 480px) {
+    #login > input {
+        width: 0;
+        margin:0;
+        visibility: hidden;
+    }
+    .selector-style input {
+        visibility: hidden;
+    }
 }

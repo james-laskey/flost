@@ -1,6 +1,13 @@
-#searchbar {
-    width:35%;
-}
 #searchbar input {
-    width:100%;
+  width:100%;
+}
+@media screen and (min-width: 481px) {
+  #searchbar {
+      width:35%;
+  }
+}
+@media screen and (max-width: 480px) {
+  #searchbar {
+        width:50%;
+    }
 }
