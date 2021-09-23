@@ -1,0 +1,19 @@
+
+#signup-graphic {
+    background-image: linear-gradient(#465EFB 10%, #C2FFD8 100%);
+}
+@media screen and (min-width: 481px) {
+    #singup-graphic  {
+        display: flex;
+        flex-direction: column;
+    }
+    #login-signup {
+        display: inline-flex;
+    }
+}
+@media screen and (max-width: 480px) {
+    #login-signup {
+        display: flex;
+        flex-direction: column;
+    }
+}

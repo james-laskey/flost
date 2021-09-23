@@ -5,39 +5,7 @@ import FacebookLogin from 'react-facebook-login'
 
 function LoginSignup(props){
 
-    function getAppCredentials(level){
-    if(level==0){
-        fetch("localhost:3001/aid", {
-            method: 'GET',
-            headers: {
-              'Accept': 'application/json, text/plain',
-              'Content-Type': 'application/json',
-            }
-        })
-        .then(response=>{return response.json()})
-        .then(json=>{
-            if(json.id){
-                return {id:json.id}
-            }
 
-        })
-    } else {
-          fetch("localhost:3001/said", {
-              method: 'GET',
-              headers: {
-                'Accept': 'application/json, text/plain',
-                'Content-Type': 'application/json',
-              }
-          })
-          .then(response=>{return response.json()})
-          .then(json=>{
-              if(json.id && json.secret){
-                  return {id:json.id,secret:json.secret}
-              }
-
-          })
-        }
-    }
 
     let [firstName, setFirstName] = useState('')
     let [lastName, setLastName] = useState('')
@@ -47,7 +15,7 @@ function LoginSignup(props){
     let [passwordCopy, setPasswordCopy] = useState('')
     let [login, toggleLogin] = useState(true)
     let [verify, toggleVerify] = useState(false)
-    let [_appCredentials, setAppCredentials] = useState(getAppCredentials(0))
+    let [_appCredentials, setAppCredentials] = useState( getAppCredentials(0))
     let [facebookLoginCredentials, setFacebookLoginCredentials] = useState(false)
 
     const fbResponse = (response) => {
@@ -121,6 +89,10 @@ function LoginSignup(props){
 
                 })
             }
+            if(username.size()>3 && password.size()>=8){
+                //check db for login credentials
+            }
+
         }
     },[toggleVerify, facebookLoginCredentials])
 
@@ -132,6 +104,13 @@ function LoginSignup(props){
                 <p>get flost.</p>
             </aside>
             <section id='login-signup-selector'>
+                <form>
+                    <label for='username'>Username</label><br/>
+                    <input name='username' type='text' onInput={e=>{setUsername(e.target.value)}}/>
+                    <label for='password'>Password</label><br/>
+                    <input name='password' type='password' onInput={e=>{setPassword(e.target.value)}}/>\
+                    <button type='submit' onClick={toggleVerify(true)}>login</button>
+                </form>
                 <FacebookLogin
                     appId={_appCredentials.id}
                     version="10.0"
