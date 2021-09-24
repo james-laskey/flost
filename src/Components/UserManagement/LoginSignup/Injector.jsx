@@ -1,8 +1,7 @@
 import LoginSignup from "./Controller.jsx"
 import React from "react";
 import ReactDOM from "react-dom";
-function getAppCredentials(){
-        fetch("http://localhost:3001/secret", {
+fetch("http://localhost:3001/secret", {
             method: 'GET',
             headers: {
               'Accept': 'application/json, text/plain',
@@ -16,5 +15,3 @@ function getAppCredentials(){
             }
 
         })
-}
-getAppCredentials()

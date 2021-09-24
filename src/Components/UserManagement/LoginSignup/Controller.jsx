@@ -2,27 +2,27 @@ import React, {useState,useEffect} from "react";
 import ReactDOM from "react-dom";
 import glyde from './gyde.svg'
 import FacebookLogin from 'react-facebook-login'
-
+import './styles.css'
 function LoginSignup(props){
 
 
 
     let [firstName, setFirstName] = useState('')
     let [lastName, setLastName] = useState('')
+    let [username, setUsername] = useState('')
     let [email, setEmail] = useState('')
     let [telephone, setTelephone] = useState('')
     let [password, setPassword] = useState('')
     let [passwordCopy, setPasswordCopy] = useState('')
     let [login, toggleLogin] = useState(true)
     let [verify, toggleVerify] = useState(false)
-    let [_appCredentials, setAppCredentials] = useState( getAppCredentials(0))
+    let [_appCredentials, setAppCredentials] = useState(props.appCredentials)
     let [facebookLoginCredentials, setFacebookLoginCredentials] = useState(false)
 
     const fbResponse = (response) => {
       console.log(response)
       const credentials = JSON.stringify(response, undefined, 2)
       setFacebookLoginCredentials(credentials)
-      setAppCredentials(_getAppCredentials(1))
       toggleVerify(true)
     }
     //Controls the Login UI Component
@@ -89,7 +89,7 @@ function LoginSignup(props){
 
                 })
             }
-            if(username.size()>3 && password.size()>=8){
+            if(username.length>3 && password.length>=8){
                 //check db for login credentials
             }
 
@@ -98,18 +98,18 @@ function LoginSignup(props){
 
     return(
         <section id='login-signup'>
-            <aside id='singup-graphic'>
+            <aside id='signup-graphic'>
                 <img src={glyde}/>
                 <strong>learn. solve. explore</strong>
                 <p>get flost.</p>
             </aside>
             <section id='login-signup-selector'>
                 <form>
-                    <label for='username'>Username</label><br/>
+                    <label for='username'>Username</label>
                     <input name='username' type='text' onInput={e=>{setUsername(e.target.value)}}/>
-                    <label for='password'>Password</label><br/>
-                    <input name='password' type='password' onInput={e=>{setPassword(e.target.value)}}/>\
-                    <button type='submit' onClick={toggleVerify(true)}>login</button>
+                    <label for='password'>Password</label>
+                    <input name='password' type='password' onInput={e=>{setPassword(e.target.value)}}/>
+                    <button type='submit' onClick={e=>{toggleVerify(true)}}>login</button>
                 </form>
                 <FacebookLogin
                     appId={_appCredentials.id}
