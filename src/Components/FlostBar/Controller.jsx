@@ -73,13 +73,16 @@ function FlostBar(props){
     },[userAviMenuToggle,user])
     React.useEffect(()=>{
         if(verify){
+        alert('App is not live')
             //request server verification and send to login page upon failure
 //             fetch('/login',{
 //                 method: 'POST',
 //
 //             })
             try{
-                if(username=="" || password==""){
+                if(username != "" || password!=""){
+
+                } else {
                     throw Error
                 }
                 //request login credentials

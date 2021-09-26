@@ -25,6 +25,10 @@ function LoginSignup(props){
       setFacebookLoginCredentials(credentials)
       toggleVerify(true)
     }
+    function handleSubmit(e){
+        e.stopPropagation()
+        toggleVerify(true)
+    }
     //Controls the Login UI Component
     useEffect(()=>{
         if(!login){
@@ -109,7 +113,7 @@ function LoginSignup(props){
                     <input name='username' type='text' onInput={e=>{setUsername(e.target.value)}}/>
                     <label for='password'>Password</label>
                     <input name='password' type='password' onInput={e=>{setPassword(e.target.value)}}/>
-                    <button type='submit' onClick={e=>{toggleVerify(true)}}>login</button>
+                    <button type='submit' onClick={e=>{handleSubmit(e)}}>login</button>
                 </form>
                 <FacebookLogin
                     appId={_appCredentials.id}
