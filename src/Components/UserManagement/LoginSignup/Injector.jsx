@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 fetch("https://f-server.herokuapp.com/secret", {
             method: 'GET',
             headers: {
+             'Access-Control-Allow-Origin': "*",
               'Accept': 'application/json, text/plain',
               'Content-Type': 'application/json',
             }
