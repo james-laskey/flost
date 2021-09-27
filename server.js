@@ -9,7 +9,8 @@ app.use(bodyParser.json({limit: '50mb'}));
 app.use(express.static('src/pages/js'));
 
 app.use(cors({
-    origin: "https://f-server.herokuapp.com"
+    origin: "https://f-server.herokuapp.com",
+    optionsSuccessStatus: 200
 }))
 const PORT = process.env.PORT || 3000
 var server = app.listen(PORT || 3000, function() {
