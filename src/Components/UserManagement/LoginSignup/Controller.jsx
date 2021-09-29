@@ -163,7 +163,7 @@ export default function LoginSignup(props){
                 return <Home user={user} logout={verifiedLogin}/>
             } catch(err){
                 verifiedLogin(false)
-                alert(err.message)
+                alert('Could not save user data!')
             }
         } else {
             try {
