@@ -94,28 +94,14 @@ export default function LoginSignup(props){
                     },
                     body:JSON.stringify(body)
                 })
-                .then(response=>{
-                    if(response.status==200){
-                        if(service!==3){
-                            setFirstTime(true)
-                            const user = {
-                                id:_loginCredentials.id,
-                                email: _loginCredentials.email,
-                                avi: "https://trashymedia.s3.us-east-2.amazonaws.com/assets/defaultAVI.png"
-                            }
-                            setUser(user)
-                            verifiedLogin(true)
-                            return response
-                        }
-
-                    } else {
-                        return response.json()
-                    }
-                })
+                .then(response=>{ return response.json()})
                 .then(json=>{
                     if(json.error){
                         alert(json.error)
-
+                    }
+                    if(json.user){
+                        setUser(json.user)
+                        verifiedLogin(true)
                     }
                 })
            }
