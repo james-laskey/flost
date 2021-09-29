@@ -96,13 +96,21 @@ export default function LoginSignup(props){
                 })
                 .then(response=>{
                     if(response.status==200){
-                        setUser(json.user)
                         if(service!==3){
                             setFirstTime(true)
+                            return response.json()
                         }
+
+                    } else {
+                        return response.json()
+                    }
+                })
+                .then(json=>{
+                    if(json.user){
+                        setUser(json.user)
                         verifiedLogin(true)
                     } else {
-                        alert('Server Error Try Again Later')
+                        alert(json.error)
                     }
                 })
            }
