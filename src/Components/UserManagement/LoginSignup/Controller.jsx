@@ -104,6 +104,7 @@ export default function LoginSignup(props){
                                 avi: "https://trashymedia.s3.us-east-2.amazonaws.com/assets/defaultAVI.png"
                             }
                             setUser(user)
+                            verifiedLogin(true)
                             return response.json()
                         }
 
@@ -115,8 +116,6 @@ export default function LoginSignup(props){
                     if(json.error){
                         alert(json.error)
 
-                    } else {
-                       verifiedLogin(true)
                     }
                 })
            }
