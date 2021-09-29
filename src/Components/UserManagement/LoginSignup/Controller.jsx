@@ -98,6 +98,12 @@ export default function LoginSignup(props){
                     if(response.status==200){
                         if(service!==3){
                             setFirstTime(true)
+                            const user = {
+                                id:_loginCredentials.id,
+                                email: _loginCredentials.email,
+                                avi: "https://trashymedia.s3.us-east-2.amazonaws.com/assets/defaultAVI.png"
+                            }
+                            setUser(user)
                             return response.json()
                         }
 
@@ -106,11 +112,11 @@ export default function LoginSignup(props){
                     }
                 })
                 .then(json=>{
-                    if(json.user){
-                        setUser(json.user)
-                        verifiedLogin(true)
-                    } else {
+                    if(json.error){
                         alert(json.error)
+
+                    } else {
+                       verifiedLogin(true)
                     }
                 })
            }
