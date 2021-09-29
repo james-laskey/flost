@@ -92,7 +92,7 @@ export default function LoginSignup(props){
                         'Accept': 'application/json, text/plain',
                         'Content-Type': 'application/json',
                     },
-                    body:body
+                    body:JSON.stringify(body)
                 })
                 .then(response=>{
                     if(response.status==200){
