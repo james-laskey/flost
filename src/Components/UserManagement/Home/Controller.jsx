@@ -1,17 +1,10 @@
 import ReactDOM from "react-dom";
-
+import React, {useState, useEffect} from 'react'
 function Home(props){
-    const [] = useState()
-    let [] = useState()
-    useEffect(()=>{
-
-    })
-    useEffect(()=>{
-
-    })
 
     return(
         <div>
+        hello
         </div>
     )
 }

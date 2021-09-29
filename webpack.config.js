@@ -11,10 +11,11 @@ module.exports = {
             path.resolve(__dirname, "src", "Components", "LandingPage", "Controller.jsx")
        ],
       signup: [path.resolve(__dirname, "src","Components", "UserManagement","LoginSignup", "Injector.jsx"),
-            path.resolve(__dirname, "src", "Components", "UserManagement","LoginSignup", "Controller.jsx")
+            path.resolve(__dirname, "src", "Components", "UserManagement","LoginSignup", "Controller.jsx"),
+            path.resolve(__dirname, "src", "Components","UserManagement", "Home", "Controller.jsx")
        ],
-       home: [path.resolve(__dirname, "src", "Components", "Home", "Injector.jsx"),
-            path.resolve(__dirname, "src", "Components", "Home", "Controller.jsx")
+       home: [path.resolve(__dirname, "src", "Components","UserManagement", "Home", "Injector.jsx"),
+            path.resolve(__dirname, "src", "Components","UserManagement", "Home", "Controller.jsx")
        ],
        profile: [path.resolve(__dirname, "src", "Components", "UserManagement", "Profile", "Injector.jsx"),
             path.resolve(__dirname, "src", "Components", "UserManagement", "Profile", "Controller.jsx")
