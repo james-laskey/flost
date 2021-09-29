@@ -22,16 +22,14 @@ export default function LoginSignup(props){
     let [_loginCredentials, setLoginCredentials] = useState(null)
     let [service, setAuthenticationService] = useState(null) //0 == local; 1 == Facebook; 2 == Google; 3 == Login
     let [loggedIn,verifiedLogin] = useState(false)
+
     const fbResponse = (response) => {
       setLoginCredentials(JSON.stringify(response, undefined, 2))
-      setAuthenticationService(1)
-      setFirstTime(true)
-      toggleVerify(true)
+      .then(()=>{setAuthenticationService(1)}).then(()=>{setFirstTime(true)}.then(()=>{toggleVerify(true)})
     }
     function handleSubmit(e, service){
         e.stopPropagation()
-        setAuthenticationService(service)
-        toggleVerify(true)
+        setAuthenticationService(service).then(()=>{toggleVerify(true)})
     }
     //Controls the Login UI Component
     useEffect(()=>{
@@ -94,7 +92,7 @@ export default function LoginSignup(props){
                     body:JSON.stringify(body)
                 })
                 .then(response=>{
-                    if(response.status==201){
+                    if(response.status==200){
                         setUser(json.user)
                         if(service!==3){
                             setFirstTime(true)
