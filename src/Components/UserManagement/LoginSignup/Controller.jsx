@@ -105,7 +105,6 @@ export default function LoginSignup(props){
                             }
                             setUser(user)
                             verifiedLogin(true)
-                            return response.json()
                         }
 
                     } else {
