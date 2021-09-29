@@ -101,7 +101,12 @@ export default function LoginSignup(props){
                             setFirstTime(true)
                         }
                         verifiedLogin(true)
+                    } else {
+                        return response.json()
                     }
+                })
+                .then(json=>{
+                    alert(json.error)
                 })
            }
     },[verify, _loginCredentials, username, password, service, telephone,email,passwordCopy])
