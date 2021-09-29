@@ -25,11 +25,14 @@ export default function LoginSignup(props){
 
     const fbResponse = (response) => {
       setLoginCredentials(JSON.stringify(response, undefined, 2))
-      .then(setAuthenticationService(1)).then(setFirstTime(true)).then(toggleVerify(true))
+      setAuthenticationService(1)
+      setFirstTime(true)
+      setTimeout(toggleVerify, 3000, true)
     }
     function handleSubmit(e, service){
         e.stopPropagation()
-        setAuthenticationService(service).then(toggleVerify(true))
+        setAuthenticationService(service)
+        toggleVerify(true)
     }
     //Controls the Login UI Component
     useEffect(()=>{
