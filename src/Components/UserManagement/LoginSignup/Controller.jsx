@@ -85,7 +85,7 @@ export default function LoginSignup(props){
                     credentials:_loginCredentials||{username:username,password:password,passwordCopy:passwordCopy,email:email,telephone:telephone, avi:"https://trashymedia.s3.us-east-2.amazonaws.com/assets/defaultAVI.png"},
                     service: service
                 }
-                fetch('http://localhost:3001/createAccount', {
+                fetch('https://f-server.herokuapp.com/createAccount', {
                     method: "POST",
                     headers: {
                         'Accept': 'application/json, text/plain',
@@ -135,7 +135,7 @@ export default function LoginSignup(props){
             )
     } else {
         if(firstTimeLogin){
-            fetch('/saveUserDetails',{
+            fetch('https://f-server.herokuapp.com/saveUserDetails',{
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json, text/plain',

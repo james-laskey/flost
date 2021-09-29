@@ -1,8 +1,8 @@
 import LoginSignup from "./Controller.jsx"
 import React from "react";
 import ReactDOM from "react-dom";
-// https://f-server.herokuapp.com/secret
-fetch("http://localhost:3001/secret", {
+// http://localhost:3001/secret
+fetch("https://f-server.herokuapp.com/secret", {
             method: 'GET',
             headers: {
               'Accept': 'application/json, text/plain',
