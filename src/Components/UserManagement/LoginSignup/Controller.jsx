@@ -102,11 +102,8 @@ export default function LoginSignup(props){
                         }
                         verifiedLogin(true)
                     } else {
-                        return response.json()
+                        alert('Server Error Try Again Later')
                     }
-                })
-                .then(json=>{
-                    alert(json.error)
                 })
            }
     },[verify, _loginCredentials, username, password, service, telephone,email,passwordCopy])
