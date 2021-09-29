@@ -135,32 +135,25 @@ export default function LoginSignup(props){
             )
     } else {
         if(firstTimeLogin){
-            fetch('https://f-server.herokuapp.com/saveUserDetails',{
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json, text/plain',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(user)
-            }).then(response=>{
-                if(response.status!=201){
-                    return response.json()
-                } else {
-                   return <Home user={user} logout={verifiedLogin}/>
-                }
-            })
-            .then(json=>{
+            try {
+                fetch('https://f-server.herokuapp.com/saveUserDetails',{
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json, text/plain',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(user)
+                })
+                return <Home user={user} logout={verifiedLogin}/>
+            } catch(err){
                 verifiedLogin(false)
-                alert(json.error)
-            })
+                alert(err.message)
+            }
         } else {
             try {
                 if(user && verifiedLogin){
                     return <Home user={user} logout={verifiedLogin}/>
-                } else {
-                    throw Error
                 }
-
             } catch(er){
                 verifiedLogin(false)
             }
