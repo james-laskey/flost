@@ -7,7 +7,6 @@ let  app = express();
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: false, parameterLimit: 50000 }))
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(express.static('src/pages/js'));
-
 let whitelist = ["https://f-server.herokuapp.com", 'http://localhost:3001', "https://graph.facebook.com"]
 app.use(cors({
     origin: whitelist,
