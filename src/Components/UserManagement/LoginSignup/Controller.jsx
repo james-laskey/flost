@@ -32,8 +32,9 @@ export default function LoginSignup(props){
       })
       .then(response=>{return response.json()})
       .then(json=>{
-        if(json.existing){
-            setAuthenticationService(4)
+        if(json.existing && json.user){
+            setUser(json.user)
+            verifiedLogin(true)
         } else {
             setAuthenticationService(1)
         }
@@ -117,25 +118,7 @@ export default function LoginSignup(props){
                     }
                 })
             }
-            if(service==4){
-                fetch('https://f-server.herokuapp.com/loginWithFacebook',{
-                    method: 'GET',
-                    headers: {
-                        'Accept': 'application/json, text/plain',
-                        'Content-Type': 'application/json',
-                    },
-                    body: _loginCredentials
-                })
-                .then(response=>{return response.json()})
-                .then(json=>{
-                    if(json.user){
-                        setUser(json.user)
-                        verifiedLogin(true)
-                    } else {
-                        alert(json.error)
-                    }
-                })
-            }
+
 
            }
     },[verify, _loginCredentials, username, password, service, telephone,email,passwordCopy])
