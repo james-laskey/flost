@@ -43,8 +43,8 @@
         visibility: hidden;
     }
     #user-avi > img {
-        width: 5rem;
-        border-radius: 6rem;
+        width: 2rem;
+        border-radius: 10px;
     }
     #selector {
         width:min-content;
