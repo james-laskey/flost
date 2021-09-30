@@ -20,14 +20,25 @@ export default function LoginSignup(props){
     let [verify, toggleVerify] = useState(false)
     let [_appCredentials, setAppCredentials] = useState(props.appCredentials)
     let [_loginCredentials, setLoginCredentials] = useState(null)
-    let [service, setAuthenticationService] = useState(null) //0 == local; 1 == Facebook; 2 == Google; 3 == Login
+    let [service, setAuthenticationService] = useState(null) //0 == local; 1 == Facebook; 2 == Google; 3 == Login; 4 == Existing Facebook Login
     let [loggedIn,verifiedLogin] = useState(false)
 
     const fbResponse = (response) => {
-      setLoginCredentials(JSON.stringify(response, undefined, 2))
-      setAuthenticationService(1)
-      setFirstTime(true)
-      setTimeout(toggleVerify, 3000, true)
+      response = JSON.stringify(response, undefined, 2)
+      setLoginCredentials(response)
+      //check db for existing user otherwise continue with flow
+      fetch('/existingUser?id='+JSON.parse(response).id, {
+        method: 'GET',
+      })
+      .then(response=>{return response.json()})
+      .then(json=>{
+        if(json.existing){
+            setAuthenticationService(4)
+        } else {
+            setAuthenticationService(1)
+        }
+      })
+        toggleVerify(true)
     }
     function handleSubmit(e, service){
         e.stopPropagation()
@@ -82,6 +93,7 @@ export default function LoginSignup(props){
     useEffect(()=>{
         if(verify){
         //request server verification
+            if(service==1){
                 let body = {
                     credentials:_loginCredentials||{username:username,password:password,passwordCopy:passwordCopy,email:email,telephone:telephone, avi:"https://trashymedia.s3.us-east-2.amazonaws.com/assets/defaultAVI.png"},
                     service: service
@@ -104,6 +116,27 @@ export default function LoginSignup(props){
                         verifiedLogin(true)
                     }
                 })
+            }
+            if(service==4){
+                fetch('https://f-server.herokuapp.com/loginWithFacebook',{
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json, text/plain',
+                        'Content-Type': 'application/json',
+                    },
+                    body: _loginCredentials
+                })
+                .then(response=>{return response.json()})
+                .then(json=>{
+                    if(json.user){
+                        setUser(json.user)
+                        verifiedLogin(true)
+                    } else {
+                        alert(json.error)
+                    }
+                })
+            }
+
            }
     },[verify, _loginCredentials, username, password, service, telephone,email,passwordCopy])
 
@@ -136,29 +169,6 @@ export default function LoginSignup(props){
             </section>
             )
     } else {
-        if(firstTimeLogin){
-            try {
-                fetch('https://f-server.herokuapp.com/saveUserDetails',{
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json, text/plain',
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(user)
-                })
-                return <Home user={user} logout={verifiedLogin}/>
-            } catch(err){
-                verifiedLogin(false)
-                alert('Could not save user data!')
-            }
-        } else {
-            try {
-                if(user && verifiedLogin){
-                    return <Home user={user} logout={verifiedLogin}/>
-                }
-            } catch(er){
-                verifiedLogin(false)
-            }
-        }
+        return <Home user={user} accessToken={user.accesstoken} logout={verifiedLogin}/>
     }
 }
