@@ -29,9 +29,9 @@ function FlostBar(props){
         function UserAvi(props){
             return(
                 <div id='user-avi' class='selector-style'>
-                    <img src={props.user.avi} onClick={toggleUserAviMenu(!userAviMenuToggle)}/>
                     <div id='avi-selector'>
                     </div>
+                    <img src={props.user.avi} onClick={toggleUserAviMenu(!userAviMenuToggle)}/>
                 </div>
             )
         }
