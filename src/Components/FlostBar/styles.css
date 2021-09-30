@@ -28,7 +28,7 @@
 
 
 @media screen and (min-width: 481px) {
-    #selector > img {
+    #user-avi > img {
         width: 2rem;
         border-radius: 4rem;
     }
@@ -42,7 +42,7 @@
     .selector-style input {
         visibility: hidden;
     }
-    #selector > img {
+    #user-avi > img {
         width: 5rem;
         border-radius: 6rem;
     }
