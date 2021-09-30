@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 var env = process.env.WEBPACK_ENV;
 module.exports = {
+    target: 'node',
     externals: {
         React: 'react'
     },
@@ -12,7 +13,8 @@ module.exports = {
        ],
       signup: [path.resolve(__dirname, "src","Components", "UserManagement","LoginSignup", "Injector.jsx"),
             path.resolve(__dirname, "src", "Components", "UserManagement","LoginSignup", "Controller.jsx"),
-            path.resolve(__dirname, "src", "Components","UserManagement", "Home", "Controller.jsx")
+            path.resolve(__dirname, "src", "Components","UserManagement", "Home", "Controller.jsx"),
+            path.resolve(__dirname, "src", "Components","FlostBar", "Controller.jsx")
        ],
        home: [path.resolve(__dirname, "src", "Components","UserManagement", "Home", "Injector.jsx"),
             path.resolve(__dirname, "src", "Components","UserManagement", "Home", "Controller.jsx")
@@ -24,7 +26,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "src", "pages","js"),
         filename: "[name].js",
-        publicPath: './'
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -33,6 +35,9 @@ module.exports = {
             exclude: /node_modules/,
             use: {
               loader: "babel-loader",
+              options: {
+                  presets: ['@babel/preset-env', '@babel/preset-react']
+              }
             }
           },
           {
