@@ -46,4 +46,12 @@
         width: 5rem;
         border-radius: 6rem;
     }
+    #selector {
+        width:min-content;
+    }
+    #avi-selector {
+        opacity: 0;
+        pointer-events: none;
+        z-index: -99;
+    }
 }
