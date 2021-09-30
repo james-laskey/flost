@@ -16,6 +16,7 @@
 #selector {
     width: 33%;
 }
+
 #flostbar-container p {
 }
 .selector-style {
@@ -27,7 +28,10 @@
 
 
 @media screen and (min-width: 481px) {
-
+    #selector > img {
+        width: 2rem;
+        border-radius: 4rem;
+    }
 }
 @media screen and (max-width: 480px) {
     #login > input {
@@ -37,5 +41,9 @@
     }
     .selector-style input {
         visibility: hidden;
+    }
+    #selector > img {
+        width: 5rem;
+        border-radius: 6rem;
     }
 }
