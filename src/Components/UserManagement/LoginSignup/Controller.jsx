@@ -27,7 +27,7 @@ export default function LoginSignup(props){
       response = JSON.stringify(response, undefined, 2)
       setLoginCredentials(response)
       //check db for existing user otherwise continue with flow
-      fetch('/existingUser?id='+JSON.parse(response).id, {
+      fetch('https://f-server.herokuapp.com/existingUser?id='+JSON.parse(response).id, {
         method: 'GET',
       })
       .then(response=>{return response.json()})
