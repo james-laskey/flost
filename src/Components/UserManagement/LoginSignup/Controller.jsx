@@ -2,11 +2,14 @@ import React, {useState,useEffect} from "react";
 import ReactDOM from "react-dom";
 import glyde from './gyde.svg'
 import FacebookLogin from 'react-facebook-login'
+import Unsolved from '../Unsolved/Controller.jsx'
 import Home from '../Home/Controller.jsx'
 import './styles.css'
 
 export default function LoginSignup(props){
     let [user, setUser] = useState(null)
+    let [unsolved, setUnsolved] = useState(props.unsolved)
+    let [unsolvedData, setUnsolvedData] = useState(null)
     let [firstTimeLogin, setFirstTime] = useState(null)
     let [firstName, setFirstName] = useState('')
     let [lastName, setLastName] = useState('')
@@ -45,6 +48,11 @@ export default function LoginSignup(props){
         e.stopPropagation()
         setAuthenticationService(service)
         toggleVerify(true)
+    }
+    function handleUnsolved(unsolvedData){
+    // json object {topic,question} and user id and date
+        setUnsolvedData(unsolvedData)
+        setUnsolved(false)
     }
     //Controls the Login UI Component
     useEffect(()=>{
@@ -121,9 +129,9 @@ export default function LoginSignup(props){
 
 
            }
-    },[verify, _loginCredentials, username, password, service, telephone,email,passwordCopy])
+    },[verify, _loginCredentials, username, password, service, telephone,email,passwordCopy, unsolvedData])
 
-    if(!loggedIn){
+    if(!loggedIn && !unsolved){
         return(
             <section id='login-signup'>
                 <aside id='signup-graphic'>
@@ -151,6 +159,9 @@ export default function LoginSignup(props){
                 </div>
             </section>
             )
+    }
+    if(unsolved && !loggedIn){
+        return <Unsolved login={handleUnsolved}/>
     } else {
         return <Home user={user} accessToken={user.accesstoken} logout={verifiedLogin}/>
     }

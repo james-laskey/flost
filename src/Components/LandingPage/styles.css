@@ -2,6 +2,14 @@
     font-size:2rem;
     color: #0A1C88;
 }
+header > a {
+    text-decoration: none;
+    width: inherit;
+    display: inherit;
+}
+header > a:visited {
+    color: inherit;
+}
 #landing-page-info {
     display:grid;
     text-align: center;
@@ -49,7 +57,7 @@
         text-align: right;
         margin-right: 5%;
         margin-top: -5%;
-        font-size: 3rem;
+        font-size: 2rem;
         font-weight: 600;
     }
 }

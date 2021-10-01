@@ -1,0 +1,75 @@
+main > datalist {
+    display: none;
+}
+main > strong  {
+    color: #7649FE;
+    font-size: 2rem;
+}
+main > section > form > div {
+    margin: 1%;
+}
+main > section > form > div > button {
+    display: flex;
+    background-color: #0A1C88;
+    padding: 4px;
+    margin-left: auto;
+}
+main  {
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+main > section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 5%;
+
+
+}
+main > section > form  {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 2%;
+
+}
+main > section > form > textarea {
+    height: calc(25vh);
+    margin-top: 3%;
+    resize: none;
+    border-radius: 5px;
+    background-color: #7649FE;
+    color: white;
+    border: none;
+    padding: 2%;
+}
+main > section > form > input {
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: #7649FE;
+    color: white;
+    font-weight: 600;
+    border: none;
+}
+@media screen and (min-width: 481px) {
+    main > section {
+        width:50%;
+    }
+    main > section > form {
+        height: calc(40vh);
+    }
+}
+@media screen and (max-width: 480px) {
+    main > section {
+        width: 90%;
+    }
+    main > section > form {
+        height: calc(80vh);
+    }
+}

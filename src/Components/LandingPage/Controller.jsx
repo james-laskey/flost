@@ -12,45 +12,18 @@ function LandingPage(props){
     <div>
         <FlostBar buttons={true}/>
         <header id='landing-page-header'>
+            <a id='unsolved' href='/signin-signup?unsolved=true'>
             <div id='gyde-container'>
                 <img src={gyde}/>
                 <div>
-                    <strong>solve. <br/>explore.</strong>
+                    <strong> flost? </strong>
                 </div>
             </div>
-            <p id="float-text-right">get flost.</p>
+            <p id="float-text-right">get your #unsolved question featured on our homepage! <br/> ...start the flow of a discussion.</p>
+            </a>
         </header>
         <section id='landing-page-info'>
-            <h1>redirecting the flow of information</h1>
-            <section>
-                <div>
-                    <h2>flost</h2>
-                    <img src={flostsvg}/>
-                     <ul>
-                         <li><p>there is a root and path to every problem</p></li>
-                         <li><p>have a problem or want to share something you know?</p></li>
-                        <li><p>create or view customizable flow charts</p></li>
-                     </ul>
-                </div>
-                <div>
-                    <h2>flash</h2>
-                    <img src={flash}/>
-                     <ul>
-                         <li><p>lets aggregate as many terms and explanations we can</p></li>
-                         <li><p>we all have random bits of knowledge, why mot share?</p></li>
-                        <li><p>create or view a customizable flash card set</p></li>
-                     </ul>
-                </div>
-                <div>
-                    <h2>final</h2>
-                    <img src={final}/>
-                     <ul>
-                         <li><p>we are in control of our statistics and learning</p></li>
-                         <li><p>test yourself, others, or collect statistical data from users</p></li>
-                        <li><p>create or view customizable finals(tests) and surveys</p></li>
-                     </ul>
-                </div>
-            </section>
+
         </section>
     </div>
     )

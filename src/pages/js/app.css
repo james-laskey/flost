@@ -13,13 +13,19 @@ body {
     border-radius: 5px;
     box-shadow: -1px 2px 4px #ccc;
 }
+textarea {
+    font-family: Rockwell;
+}
+input  {
+    font-family: Rockwell;
+}
 #app {
     width: inherit;
     height: inherit;
     overflow-y: scroll;
     background-color: #FCFBFE;
 }
-a {
+nav > a {
     background-color: #7649FE;
     border: #FCFBFE 2px solid;
     font-family: inherit;

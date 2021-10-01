@@ -93,14 +93,14 @@ function FlostBar(props){
         }
     },[verify])
     return(
-    <div id='flostbar-wrapper'>
+    <nav id='flostbar-wrapper'>
       <div id='flostbar-container'>
         <strong>flost</strong>
         <SearchBar/>
         <section id='selector'>
         </section>
       </div>
-    </div>
+    </nav>
     )
 }
 export default FlostBar
