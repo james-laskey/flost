@@ -9,6 +9,7 @@ import './styles.css'
 export default function LoginSignup(props){
     let [user, setUser] = useState(null)
     let [unsolved, setUnsolved] = useState(props.unsolved)
+    let [data, uploadUnsolvedData] = useState(false)
     let [unsolvedData, setUnsolvedData] = useState(null)
     let [firstTimeLogin, setFirstTime] = useState(null)
     let [firstName, setFirstName] = useState('')
@@ -98,6 +99,20 @@ export default function LoginSignup(props){
             )
         }
     },[loginComponent])
+    //upload unsolved data before signin
+    useEffect(()=>{
+        if(data){
+            fetch('/uploadUnsolved',{
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json, text/plain',
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response=>{})
+
+        }
+    },[data, unsolvedData])
     //server side verification for user login data
     useEffect(()=>{
         if(verify){
@@ -122,6 +137,9 @@ export default function LoginSignup(props){
                     }
                     if(json.user){
                         setUser(json.user)
+                        if(unsolvedData){
+                            uploadUnsolved(true)
+                        }
                         verifiedLogin(true)
                     }
                 })
@@ -166,3 +184,4 @@ export default function LoginSignup(props){
         return <Home user={user} accessToken={user.accesstoken} logout={verifiedLogin}/>
     }
 }
+

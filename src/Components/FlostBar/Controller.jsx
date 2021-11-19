@@ -5,6 +5,7 @@ import SearchBar from '../SearchBar/Controller.jsx'
 import './styles.css'
 
 function FlostBar(props){
+    let login = props.login || null
     const [buttons,toggleButtons] = React.useState(props.buttons)
     let [user,setUser] = React.useState(props.user || {})
     let [userAviMenuToggle, toggleUserAviMenu] = React.useState(false)
@@ -73,23 +74,29 @@ function FlostBar(props){
     },[userAviMenuToggle,user])
     React.useEffect(()=>{
         if(verify){
-        alert('App is not live')
+            let user = {
+                userid: 'abc',
+                firstname: 'James',
+                lastname: 'Laskey',
+                email: 'james.laskey23@gmail.com'
+            }
+            login(user)
             //request server verification and send to login page upon failure
 //             fetch('/login',{
 //                 method: 'POST',
 //
 //             })
-            try{
-                if(username != "" || password!=""){
-
-                } else {
-                    throw Error
-                }
-                //request login credentials
-            } catch(err){
-                toggleVerify(false)
-                window.location.href = '/signin-signup'
-            }
+//             try{
+//                 if(username != "" || password!=""){
+//
+//                 } else {
+//                     throw Error
+//                 }
+//                 //request login credentials
+//             } catch(err){
+//                 toggleVerify(false)
+//                 //window.location.href = '/signin-signup'
+//             }
         }
     },[verify])
     return(

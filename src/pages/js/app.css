@@ -36,6 +36,16 @@ nav > a {
     padding: 0.5%;
     border-radius: 0.5rem;
 }
+.selector-style > a {
+    background-color: #7649FE;
+    border: #FCFBFE 2px solid;
+    font-family: inherit;
+    color: #7649FE;
+    font-size: 1rem;
+    color: white;
+    padding: 0.5%;
+    border-radius: 0.5rem;
+}
 button {
     background-color: #7649FE;
     border: #FCFBFE 2px solid;
@@ -45,6 +55,7 @@ button {
     color: white;
     padding: 0.5%;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 h1 {
     color: #7649FE;
@@ -65,9 +76,16 @@ header {
 }
 input[type="text"] {
     border-radius: 0.5rem;
-    background-color: #FCFBFE;
-    border: none;
+    background-color: white;
+    border:  solid 1px #4b92fb;
     font-family: Rockwell;
-    margin-right: 1%;
     padding: 1%;
+}
+textarea {
+    resize: none;
+    border-radius: 0.5rem;
+    background-color: white;
+    border: solid 1px #4b92fb;
+    font-family: Rockwell;
+    padding: 2%;
 }

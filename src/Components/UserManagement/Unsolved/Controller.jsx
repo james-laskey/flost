@@ -10,7 +10,7 @@ function Unsolved(props){
         try {
             document.getElementById('alert').classList.remove('activeAlert')
         } catch {
-            console.log('ph')
+            console.log()
         }
 
     }
@@ -23,7 +23,7 @@ function Unsolved(props){
                     return(
                         <div>
                             <p>you must signup/login to upload your question</p>
-                            <button onClick={e=>{props.login(false)}}> get flost </button>
+                            <button onClick={e=>{props.login({topic:topic,question:question})}}> get flost </button>
                             <a href='/'>stay flost</a>
                         </div>
                     )

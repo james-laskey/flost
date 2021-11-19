@@ -1,0 +1,76 @@
+section > input [type='text'] {
+    background: #ccc;
+    border: solid 2px #0A1C88;
+    border-radius: 10px;
+    padding: 0.3rem;
+}
+#flost-wrapper {
+    display: grid;
+    grid-template-columns: calc(100vw) ;
+    justify-content: center;
+    grid-template-rows: auto auto auto auto;
+}
+#flost-wrapper > section {
+    margin-bottom: 2%;
+}
+#think-tank {
+    display: grid;
+    width: 29vw;
+    margin: 0;
+    padding: 0;
+}
+#paths {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-around;
+}
+#paths > input {
+    width: 375px;
+}
+.add-steps {
+    display: grid;
+}
+.step > textarea {
+    width: 375px;
+    height: 250px;
+}
+.step > button  {
+    position: relative;
+    bottom: -10px;
+    right: 5px;
+    border-radius: 5px;
+    font-size: 0.5rem;
+}
+#path-info > input {
+    width: 60vw;
+}
+#preview-button {
+    position: absolute;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50vw;
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#preview-button > button {
+    width: 100%;
+}
+#path-info {
+    margin-top: 1rem;
+    display: inline-flex;
+    justify-content: space-around;
+}
+#steps-wrapper {
+    display: inline-flex;
+    width:100%;
+    overflow-y: scroll;
+    justify-content: space-around;
+    padding-bottom: 5%;
+
+}
+.title {
+    display: inline-flex;
+    justify-content: space-around;
+}

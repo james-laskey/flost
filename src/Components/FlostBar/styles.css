@@ -8,10 +8,15 @@
     align-items: center;
     margin:0px 2px 0px 2px;
 }
+.selector-style > a {
+
+}
 #flostbar-wrapper {
     background-color: #0A1C88;
     width: 100%;
     padding: 0px 1px 0px 1px;
+    position: fixed;
+    top: 0;
 }
 #selector {
     width: 33%;

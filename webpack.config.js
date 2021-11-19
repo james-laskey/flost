@@ -16,12 +16,6 @@ module.exports = {
             path.resolve(__dirname, "src", "Components","UserManagement", "Home", "Controller.jsx"),
             path.resolve(__dirname, "src", "Components","FlostBar", "Controller.jsx")
        ],
-       home: [path.resolve(__dirname, "src", "Components","UserManagement", "Home", "Injector.jsx"),
-            path.resolve(__dirname, "src", "Components","UserManagement", "Home", "Controller.jsx")
-       ],
-       profile: [path.resolve(__dirname, "src", "Components", "UserManagement", "Profile", "Injector.jsx"),
-            path.resolve(__dirname, "src", "Components", "UserManagement", "Profile", "Controller.jsx")
-       ],
     },
     output: {
         path: path.resolve(__dirname, "src", "pages","js"),

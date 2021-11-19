@@ -17,6 +17,7 @@ var server = app.listen(PORT || 3000, function() {
   console.log("listening on port number %d", server.address().port);
 });
 app.get('/', (req, res) => res.sendFile(__dirname+"/src/pages/landing-page.html"));
+app.get('/compose-flost', (req, res) => res.sendFile(__dirname+"/src/pages/compose-flost.html"));
 app.get('/signin-signup', (req,res)=>res.sendFile(__dirname+"/src/pages/signin-signup.html"));
 //ASSETS
 app.get('/gyde',(req,res)=>res.sendFile(__dirname+"/src/pages/js/assets/80ac5f1fd3bf79c6596ab5cf09b575bd-gyde.svg"))
